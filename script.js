@@ -4,6 +4,7 @@ const allowButton = document.getElementById('allowButton');
 const loading = document.getElementById('loading');
 const MODEL_URL = `./models`
 loading.style.display = 'flex';
+popup.style.display = 'flex';
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
@@ -15,7 +16,6 @@ Promise.all([
     popup.style.display = 'none';
     startVideo();
   });
-  popup.style.display = 'flex';
 })
 .catch(error => {
   console.error('Error loading models:', error);
